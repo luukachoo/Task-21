@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="23dp"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_margin="23dp">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
@@ -23,20 +23,19 @@
             android:id="@+id/ivBackground"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_oval"
             android:layout_gravity="bottom"
+            android:layout_marginStart="16dp"
             android:layout_marginBottom="24dp"
-            android:layout_marginStart="16dp"/>
+            android:src="@drawable/ic_oval" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivHeart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_heart"
             android:layout_gravity="bottom"
             android:layout_marginStart="29dp"
             android:layout_marginBottom="36dp"
-            />
+            android:src="@drawable/ic_heart" />
     </com.google.android.material.card.MaterialCardView>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -54,9 +53,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
         android:fontFamily="@font/spf_pro_display_medium"
         android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
         tools:text="$3000" />
 </androidx.constraintlayout.widget.ConstraintLayout>

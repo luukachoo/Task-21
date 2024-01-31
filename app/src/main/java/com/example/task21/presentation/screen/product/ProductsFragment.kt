@@ -8,7 +8,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.task21.databinding.FragmentProductsBinding
 import com.example.task21.presentation.common.base.BaseFragment
-import com.example.task21.presentation.common.helper.Listener
 import com.example.task21.presentation.common.helper.Observer
 import com.example.task21.presentation.event.ProductFragmentEvents
 import com.example.task21.presentation.extension.showSnackbar
@@ -17,7 +16,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsBinding::inflate), Observer {
+class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsBinding::inflate),
+    Observer {
 
     private val viewModel: ProductsViewModel by viewModels()
     private val productRecyclerAdapter by lazy { ProductsAdapter() }
@@ -42,20 +42,20 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
         }
     }
 
-    private fun handleProductsState(state: ProductState) {
-        binding.progressBar.isVisible = state.isLoading
+    private fun handleProductsState(state: ProductState) = with(binding) {
+        progressBar.isVisible = state.isLoading
 
         state.products?.let {
             if (it.isEmpty()) {
-                binding.tvError.visibility = View.VISIBLE
+                tvError.visibility = View.VISIBLE
             } else {
                 productRecyclerAdapter.submitList(it)
-                binding.tvError.visibility = View.GONE
+                tvError.visibility = View.GONE
             }
         }
 
         state.errorMessage?.let {
-            binding.root.showSnackbar(it)
+            root.showSnackbar(it)
             viewModel.onEvent(ProductFragmentEvents.ResetErrorMessage)
         }
     }

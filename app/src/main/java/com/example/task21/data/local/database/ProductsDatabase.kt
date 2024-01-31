@@ -6,6 +6,6 @@ import com.example.task21.data.local.dao.ProductDao
 import com.example.task21.data.local.model.ProductEntity
 
 @Database(entities = [ProductEntity::class], version = 1)
-abstract class ProductsDatabase : RoomDatabase(){
+abstract class ProductsDatabase : RoomDatabase() {
     abstract fun productsDao(): ProductDao
 }

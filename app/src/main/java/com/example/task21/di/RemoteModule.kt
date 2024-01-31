@@ -3,7 +3,7 @@ package com.example.task21.di
 import android.content.Context
 import com.example.task21.BuildConfig
 import com.example.task21.data.remote.service.GetProductsService
-import com.example.task21.data.util.NetworkStatusTracker
+import com.example.task21.data.util.ConnectivityStatusChecker
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -52,13 +52,13 @@ object RemoteModule {
 
     @Provides
     @Singleton
-    fun provideProductService(retrofit: Retrofit) : GetProductsService =
+    fun provideProductService(retrofit: Retrofit): GetProductsService =
         retrofit.create(GetProductsService::class.java)
 
     @Provides
     @Singleton
-    fun provideNetworkStatusTracker(@ApplicationContext context: Context): NetworkStatusTracker {
-        return NetworkStatusTracker(context)
+    fun provideNetworkStatusTracker(@ApplicationContext context: Context): ConnectivityStatusChecker {
+        return ConnectivityStatusChecker(context)
     }
 
 }

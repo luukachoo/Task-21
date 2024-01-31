@@ -11,7 +11,8 @@ import com.example.task21.presentation.model.Product
 
 class ProductsAdapter : ListAdapter<Product, ProductsAdapter.ProductViewHolder>(ProductCallback()) {
 
-    inner class ProductViewHolder(private val binding: ItemProductBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ProductViewHolder(private val binding: ItemProductBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product) = with(binding) {
             Glide.with(itemView.context)
                 .load(product.cover)
@@ -23,8 +24,8 @@ class ProductsAdapter : ListAdapter<Product, ProductsAdapter.ProductViewHolder>(
                 ivBackground.visibility = View.VISIBLE
                 ivHeart.visibility = View.VISIBLE
             } else {
-                ivBackground.visibility = View.VISIBLE
-                ivHeart.visibility = View.VISIBLE
+                ivBackground.visibility = View.GONE
+                ivHeart.visibility = View.GONE
             }
         }
     }
