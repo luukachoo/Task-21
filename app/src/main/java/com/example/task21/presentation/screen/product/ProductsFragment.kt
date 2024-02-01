@@ -1,7 +1,6 @@
 package com.example.task21.presentation.screen.product
 
 import android.view.View
-import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -43,7 +42,11 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
     }
 
     private fun handleProductsState(state: ProductState) = with(binding) {
-        progressBar.isVisible = state.isLoading
+        if (state.isLoading) {
+            progressBar.visibility = View.VISIBLE
+        } else {
+            progressBar.visibility = View.GONE
+        }
 
         state.products?.let {
             if (it.isEmpty()) {

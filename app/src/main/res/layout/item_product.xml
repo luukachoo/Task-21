@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="23dp">
@@ -44,9 +43,9 @@
         android:layout_height="match_parent"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/spf_pro_display_medium"
+        android:text="@string/mamakacuri_qurtuki"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView"
-        tools:text="mamakacuri qurtuki" />
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvPrice"
@@ -54,8 +53,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:fontFamily="@font/spf_pro_display_medium"
+        android:text="@string/price"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
-        tools:text="$3000" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 </androidx.constraintlayout.widget.ConstraintLayout>

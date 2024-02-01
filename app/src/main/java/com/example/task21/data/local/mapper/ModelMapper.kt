@@ -10,3 +10,11 @@ fun ProductEntity.toDomain() = GetProduct(
     price,
     title,
 )
+
+fun GetProduct.asEntity() = ProductEntity(
+    id = id,
+    cover = cover,
+    favorite = favorite,
+    price = price,
+    title = title
+)
