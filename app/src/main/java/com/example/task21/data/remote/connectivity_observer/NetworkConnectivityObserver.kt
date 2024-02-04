@@ -1,8 +1,9 @@
-package com.example.task21.data.util
+package com.example.task21.data.remote.connectivity_observer
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.Network
+import com.example.task21.domain.remote.connectivity_observer.ConnectivityObserver
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

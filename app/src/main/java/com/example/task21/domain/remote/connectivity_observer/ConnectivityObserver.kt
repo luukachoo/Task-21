@@ -1,4 +1,4 @@
-package com.example.task21.data.util
+package com.example.task21.domain.remote.connectivity_observer
 
 import kotlinx.coroutines.flow.Flow
 

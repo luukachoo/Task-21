@@ -2,8 +2,8 @@ package com.example.task21.presentation.screen.product
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.task21.data.remote.connectivity_observer.NetworkConnectivityObserver
 import com.example.task21.data.remote.util.Resource
-import com.example.task21.data.util.NetworkConnectivityObserver
 import com.example.task21.domain.remote.use_case.ProductsUseCase
 import com.example.task21.presentation.event.ProductFragmentEvents
 import com.example.task21.presentation.mapper.toPresentation

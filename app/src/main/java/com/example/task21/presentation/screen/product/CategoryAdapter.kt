@@ -13,9 +13,9 @@ class CategoryAdapter :
 
     inner class CategoryViewHolder(private val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(category: String) {
-            binding.buttonCategory.text = category
-            binding.buttonCategory.setOnClickListener {
+        fun bind(category: String) = with(binding) {
+            buttonCategory.text = category
+            buttonCategory.setOnClickListener {
                 onCategoryClick?.invoke(category)
             }
         }
