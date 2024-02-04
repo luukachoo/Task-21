@@ -5,5 +5,6 @@ data class Product(
     val favorite: Boolean,
     val id: Int,
     val price: String,
-    val title: String
+    val title: String,
+    val category: String
 )

@@ -115,3 +115,7 @@ dependencies {
 kapt {
     correctErrorTypes = true
 }
+
+ksp {
+    arg("room.schemaLocation", "${project.projectDir}/schemas")
+}

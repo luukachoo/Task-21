@@ -4,11 +4,12 @@ import com.example.task21.data.local.model.ProductEntity
 import com.example.task21.domain.remote.model.GetProduct
 
 fun ProductEntity.toDomain() = GetProduct(
-    cover,
-    favorite,
-    id,
-    price,
-    title,
+    cover = cover,
+    favorite = favorite,
+    id = id,
+    price = price,
+    title = title,
+    category = category!!
 )
 
 fun GetProduct.asEntity() = ProductEntity(
@@ -16,5 +17,6 @@ fun GetProduct.asEntity() = ProductEntity(
     cover = cover,
     favorite = favorite,
     price = price,
-    title = title
+    title = title,
+    category = category
 )

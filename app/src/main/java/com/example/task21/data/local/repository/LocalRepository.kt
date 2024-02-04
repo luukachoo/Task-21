@@ -1,4 +1,4 @@
-package com.example.task21.data.local.data_source
+package com.example.task21.data.local.repository
 
 import com.example.task21.data.local.dao.ProductDao
 import com.example.task21.data.local.mapper.asEntity
@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class LocalDataSource @Inject constructor(private val productDao: ProductDao) :
+class LocalRepository @Inject constructor(private val productDao: ProductDao) :
     LocalProductRepository {
     override fun getProducts(): Flow<List<GetProduct>> {
         return productDao.getProducts().map { list ->
@@ -23,5 +23,13 @@ class LocalDataSource @Inject constructor(private val productDao: ProductDao) :
 
     override suspend fun insertProducts(products: List<GetProduct>) = withContext(Dispatchers.IO) {
         productDao.insertProducts(products.map { it.asEntity() })
+    }
+
+    override fun getProductByCategory(category: String): Flow<List<GetProduct>> {
+        return productDao.getProductsByCategory(category).map { list ->
+            list.map { productEntity ->
+                productEntity.toDomain()
+            }
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.example.task21.data.remote.data_source
+package com.example.task21.data.remote.repository
 
 import com.example.task21.data.remote.network.mapper.asResource
 import com.example.task21.data.remote.network.mapper.toDomain
@@ -10,7 +10,7 @@ import com.example.task21.domain.remote.repository.RemoteProductRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class NetworkDataSource @Inject constructor(
+class RemoteRepository @Inject constructor(
     private val service: GetProductsService,
     private val responseHandler: ResponseHandler
 ) : RemoteProductRepository {

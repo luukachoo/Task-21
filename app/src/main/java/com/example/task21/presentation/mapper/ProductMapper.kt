@@ -8,5 +8,6 @@ fun GetProduct.toPresentation() = Product(
     favorite = favorite,
     id = id,
     price = price,
-    title = title
+    title = title,
+    category = category
 )

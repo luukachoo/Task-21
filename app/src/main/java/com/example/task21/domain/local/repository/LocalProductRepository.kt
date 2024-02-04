@@ -6,4 +6,5 @@ import kotlinx.coroutines.flow.Flow
 interface LocalProductRepository {
     fun getProducts(): Flow<List<GetProduct>>
     suspend fun insertProducts(products: List<GetProduct>)
+    fun getProductByCategory(category: String): Flow<List<GetProduct>>
 }

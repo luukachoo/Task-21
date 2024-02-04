@@ -15,5 +15,7 @@ data class ProductEntity(
     @ColumnInfo(name = "price")
     val price: String,
     @ColumnInfo(name = "title")
-    val title: String
+    val title: String,
+    @ColumnInfo(name = "category")
+    val category: String? = null
 )
